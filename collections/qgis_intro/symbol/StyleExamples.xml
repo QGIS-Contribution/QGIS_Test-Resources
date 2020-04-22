@@ -1,7 +1,7 @@
 <!DOCTYPE qgis_style>
 <qgis_style version="2">
   <symbols>
-    <symbol alpha="1" clip_to_extent="1" type="marker" force_rhr="0" name="HT-test-marker-style (QGIS Test repository)">
+    <symbol alpha="1" clip_to_extent="1" type="marker" force_rhr="0" name="test_marker-style">
       <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
         <prop k="angle" v="0"/>
         <prop k="color" v="255,0,0,0"/>
@@ -32,7 +32,7 @@
     </symbol>
   </symbols>
   <colorramps>
-    <colorramp type="colorbrewer" name="cr_colorbrewer (QGIS Test repository)">
+    <colorramp type="colorbrewer" name="cr_colorbrewer">
       <prop k="colors" v="9"/>
       <prop k="inverted" v="0"/>
       <prop k="rampType" v="colorbrewer"/>
