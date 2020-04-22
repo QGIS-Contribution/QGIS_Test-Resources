@@ -1,7 +1,7 @@
 <!DOCTYPE qgis_style>
 <qgis_style version="2">
   <symbols>
-    <symbol tags="QGIS test collection 2 (QGIS Test repository)/postring" alpha="1" clip_to_extent="1" type="marker" force_rhr="0" name="HT-test-marker-style (QGIS Test repository)">
+    <symbol alpha="1" clip_to_extent="1" type="marker" force_rhr="0" name="test_marker-style">
       <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
         <prop k="angle" v="0"/>
         <prop k="color" v="255,0,0,0"/>
@@ -32,7 +32,7 @@
     </symbol>
   </symbols>
   <colorramps>
-    <colorramp tags="QGIS test collection 2 (QGIS Test repository)/various_symbols" type="colorbrewer" name="cr_colorbrewer (QGIS Test repository)">
+    <colorramp type="colorbrewer" name="cr_colorbrewer">
       <prop k="colors" v="9"/>
       <prop k="inverted" v="0"/>
       <prop k="rampType" v="colorbrewer"/>
@@ -40,7 +40,7 @@
     </colorramp>
   </colorramps>
   <textformats>
-    <textformat tags="Test" name="TextFormatTest">
+    <textformat name="TextFormatTest">
       <text-style fontWeight="50" fontSizeMapUnitScale="3x:0,0,0,0,0,0" multilineHeight="1" fontKerning="1" fontUnderline="0" fontStrikeout="0" previewBkgrdColor="255,255,255,255" textColor="127,61,0,255" fontSize="15" fontSizeUnit="Point" textOrientation="horizontal" fontCapitals="0" fontItalic="0" fontFamily="Ubuntu" blendMode="0" fontLetterSpacing="0" fontWordSpacing="0" namedStyle="Regular" textOpacity="0.5">
         <text-buffer bufferColor="255,255,255,255" bufferNoFill="1" bufferSizeUnits="MM" bufferSize="1" bufferJoinStyle="128" bufferDraw="0" bufferOpacity="1" bufferBlendMode="0" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
         <text-mask maskType="0" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskSizeUnits="MM" maskJoinStyle="128" maskSize="1.5" maskOpacity="1" maskEnabled="0" maskedSymbolLayers=""/>
@@ -87,7 +87,7 @@
     </textformat>
   </textformats>
   <labelsettings>
-    <labelsetting tags="Test" name="TestLabelSettings">
+    <labelsetting name="TestLabelSettings">
       <settings calloutType="simple">
         <text-style fontWeight="50" fieldName="fid" useSubstitutions="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" multilineHeight="1" fontKerning="1" fontUnderline="0" fontStrikeout="0" previewBkgrdColor="255,255,255,255" textColor="127,61,0,255" fontSize="15" fontSizeUnit="Point" textOrientation="horizontal" fontCapitals="0" fontItalic="0" fontFamily="Ubuntu" isExpression="0" blendMode="0" fontLetterSpacing="0" fontWordSpacing="0" namedStyle="Regular" textOpacity="1">
           <text-buffer bufferColor="255,255,255,255" bufferNoFill="1" bufferSizeUnits="MM" bufferSize="1" bufferJoinStyle="128" bufferDraw="0" bufferOpacity="1" bufferBlendMode="0" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
