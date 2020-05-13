@@ -1,0 +1,21 @@
+{
+    "author": "Tveite",
+    "exported_at": "2020-05-13T08:38:22",
+    "expressions": [
+        {
+            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Returns the &lt;b&gt;hemisphere&lt;/b&gt; ('N' or 'S') of the centroid of the current feature.</p></body></html>",
+            "expression": "if( y( transform( centroid( $geometry ),   layer_property( @layer_id, crs), 'EPSG:4326')) >= 0, 'N', 'S')",
+            "group": "user",
+            "name": "Hemisphere",
+            "type": "expression"
+        },
+        {
+            "description": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap; }\n</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Returns the kind of day ('Work' Monday to Friday, 'Play' Saturday and Sunday).</p></body></html>",
+            "expression": " if(day_of_week(now) IN (0,6),'Play','Work')",
+            "group": "user",
+            "name": "Kind of day",
+            "type": "expression"
+        }
+    ],
+    "qgis_version": "3.13.0-Master"
+}
