@@ -2,7 +2,7 @@
 
 """
 ***************************************************************************
-    RandomPointsAlongEachLine.py
+    RandomPointsAlongEachLineTest.py
     ---------------------
     Date                 : February 2020
     Copyright            : (C) 2020 by Håvard Tveite
@@ -48,7 +48,7 @@ from processing.algs.qgis.QgisAlgorithm import QgisAlgorithm
 from processing.tools import vector
 
 
-class HTRandomPointsAlongEachLine(QgisAlgorithm):
+class HTRandomPointsAlongEachLineTest(QgisAlgorithm):
 
     INPUT = 'INPUT'
     POINTS_NUMBER = 'POINTS_NUMBER'
