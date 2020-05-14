@@ -2,10 +2,10 @@
 
 """
 ***************************************************************************
-    RandomPointsAlongEachLine.py
+    RandomPointsAlongEachLineTest.py
     ---------------------
     Date                 : February 2020
-    Copyright            : (C) 2020 by Håvard Tveite
+    Copyright            : (C) 2020 by QGIS
     Email                : havard dot tveite at nmbu dot no
 ***************************************************************************
 *                                                                         *
@@ -17,9 +17,9 @@
 ***************************************************************************
 """
 
-__author__ = 'Håvard Tveite'
+__author__ = 'QGIS Resource Sharing'
 __date__ = 'February 2020'
-__copyright__ = '(C) 2020, Håvard Tveite'
+__copyright__ = '(C) 2020, QGIS'
 
 import random
 
@@ -48,7 +48,7 @@ from processing.algs.qgis.QgisAlgorithm import QgisAlgorithm
 from processing.tools import vector
 
 
-class HTRandomPointsAlongEachLine(QgisAlgorithm):
+class RandomPointsAlongEachLineTest(QgisAlgorithm):
 
     INPUT = 'INPUT'
     POINTS_NUMBER = 'POINTS_NUMBER'
@@ -93,10 +93,10 @@ class HTRandomPointsAlongEachLine(QgisAlgorithm):
 
 
     def name(self):
-        return 'htrandompointsalongeachline'
+        return 'randompointsalongeachlinetest'
 
     def displayName(self):
-        return self.tr('HT Random points along each line')
+        return self.tr('Random points along each line - test script')
 
     def processAlgorithm(self, parameters, context, feedback):
         source = self.parameterAsSource(parameters, self.INPUT, context)
@@ -134,17 +134,12 @@ class HTRandomPointsAlongEachLine(QgisAlgorithm):
             feedback.pushInfo('fGeom: ' + str(fGeom))
             totLineLength = da.measureLength(fGeom)
             feedback.pushInfo('fGeom totLineLength: ' + str(totLineLength))
-            # Explode multi part
+            # Explode multi-part
             if fGeom.isMultipart():
                 for aLine in fGeom.asMultiPolyline():
                     lineGeoms.append(aLine)
-                #lines = fGeom.asMultiPolyline()
-                # pick random line
-                #lineId = random.randint(0, len(lines) - 1)
-                #vertices = lines[lineId]
             else:
                 lineGeoms.append(fGeom.asPolyline())
-                #vertices = fGeom.asPolyline()
             feedback.pushInfo('lineGeoms: ' + str(lineGeoms))
 
 
@@ -154,7 +149,6 @@ class HTRandomPointsAlongEachLine(QgisAlgorithm):
             while nIterations < maxIterations and nPoints < pointCount:
                 if feedback.isCanceled():
                     break
-                #feedback.pushInfo('nIterations: ' + str(nIterations))
                 # Get the random "position" for this point
                 randomLength = random.random() * totLineLength
                 feedback.pushInfo('randomLength: ' + str(randomLength))
@@ -174,12 +168,7 @@ class HTRandomPointsAlongEachLine(QgisAlgorithm):
                     # Skip if this is not the "selected" part
                     if currLength < randomLength:
                         continue
-                    #randomLength -= currLength
-                    #vertices = QgsGeometry.fromPolylineXY(l)
                     feedback.pushInfo('l/vertices: ' + str(vertices))
-
-                    #randomLength = random.random() * lineLength
-                    #distanceToVertex(vid)
 
                     # find the segment for the new point
                     # and calculate the offset (remainDistance) on that segment
@@ -187,11 +176,8 @@ class HTRandomPointsAlongEachLine(QgisAlgorithm):
                     feedback.pushInfo('remainDist1: ' + str(remainDist))
                     if len(vertices) == 2:
                         vid = 0
-                        #remainDist = randomLength - currLength
                     else:
                         vid = 0
-                        #while (fGeom.distanceToVertex(vid)) < randomLength:
-                        #while (currGeom.distanceToVertex(vid)) < randomLength:
                         currDist = currGeom.distanceToVertex(vid)
                         prevDist = currDist
                         while currDist < remainDist and vid < len(vertices):
@@ -210,7 +196,6 @@ class HTRandomPointsAlongEachLine(QgisAlgorithm):
                     startPoint = vertices[vid]
                     endPoint = vertices[vid + 1]
                     length = da.measureLine(startPoint, endPoint)
-                    # if remainDist > minDistance:
                     d = remainDist / (length - remainDist)
                     rx = (startPoint.x() + d * endPoint.x()) / (1 + d)
                     ry = (startPoint.y() + d * endPoint.y()) / (1 + d)
@@ -234,7 +219,6 @@ class HTRandomPointsAlongEachLine(QgisAlgorithm):
                 nIterations += 1
 
             if nPoints < pointCount:
-                #feedback.pushInfo(self.tr('Could not generate requested number of random points. '
                 feedback.reportError(self.tr('Could not generate requested number of random points. '
                                              'Maximum number of attempts exceeded.'), False)
 
