@@ -49,7 +49,6 @@ from processing.tools import vector
 
 
 class RandomPointsAlongEachLineTest(QgisAlgorithm):
-
     INPUT = 'INPUT'
     POINTS_NUMBER = 'POINTS_NUMBER'
     MIN_DISTANCE = 'MIN_DISTANCE'
