@@ -91,7 +91,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
         should provide a basic description about what the algorithm does and the
         parameters and outputs associated with it..
         """
-        return self.tr("Example algorithm short description")
+        return self.tr("QGIS Resource Sharing example algorithm for testing")
 
     def initAlgorithm(self, config=None):
         """
