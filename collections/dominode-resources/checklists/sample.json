@@ -1,0 +1,19 @@
+{
+  "name": "DomiNode - Sample checklist",
+  "description": "This is just a sample checklist - be sure to delete it",
+  "dataset_type": "vector",
+  "validation_artifact_type": "dataset",
+  "checks": [
+    {
+      "name": "geometry is valid",
+      "description": "Layer's geometry does not have invalid geometries.",
+      "guide": "Navigate to Vector -> Geometry tools -> Check Validity... and run the validity analysis tool. Afterwards check that there are no features on the `invalid output` layer",
+      "automation": {
+        "algorithm_id": "qgis:checkvalidity",
+        "artifact_parameter_name": "INPUT_LAYER",
+        "output_name": "INVALID_COUNT",
+        "negate_output": true
+      }
+    }
+  ]
+}
